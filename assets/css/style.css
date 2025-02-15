@@ -1,0 +1,515 @@
+body {
+    background:url("https://wallpaperaccess.com/full/1216501.jpg") no-repeat fixed;
+    background-size:cover;
+    font: 300 18px/18px Roboto;
+  }
+  
+  *,
+  :after,
+  :before {
+    box-sizing: border-box
+  }
+  
+  .clearfix:after,
+  .clearfix:before {
+    content: '';
+    display: table
+  }
+  
+  .clearfix:after {
+    clear: both;
+    display: block
+  }
+  .content{
+    margin-top: 20px;
+  }
+  .mobile-wrap {
+    margin: auto;
+    top:15px;
+    width: 400px;
+    height: 700px;
+    overflow: hidden;
+    position: relative;
+    background:url("https://wallpapers.com/images/featured/minimalist-phone-background-5as7vn1i37sgrkyd.jpg");
+    background-position:center;
+    background-size:cover;
+    border-radius:35px;
+    --moz-box-shadow: 3px 3px 3px #222;
+  -webkit-box-shadow: 3px 3px 3px #222;
+  box-shadow: 3px 3px 3px #222;
+  }
+  
+  .mobile-wrap:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    position: absolute;
+    
+  }
+  
+  .mobile {
+    z-index: 99;
+    color: #fff;
+    height: 100%;
+    padding: 15px;
+    position: relative
+  }
+  
+  
+  .nav {
+    right: 15px;
+    z-index: 20;
+    width: 45px;
+    bottom: 15px;
+    height: 45px;
+    display: block;
+    position: absolute;
+    left: 170px;
+    line-height: 45px;
+    border-radius: 50%;
+    border:0.5px solid;
+    border-color:#4AD6BD;
+    -webkit-animation-delay: .3s;
+    animation-delay:0.3s;
+    }
+  
+  .mask {
+    z-index: 21;
+    color: #fff;
+    width: inherit;
+    height: inherit;
+    cursor: pointer;
+    font-size: 28px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    background:#4AD6BD;
+    -webkit-transition: all .1s ease-in-out 0s;
+            transition: all .1s ease-in-out 0s;
+           
+  }
+  
+  .nav.active .mask {
+    background:#4AD6BD;
+    -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+            transform: rotate(-135deg)
+  }
+  
+  .nav:after {
+    top: 0;
+    left: 0;
+    content: '';
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    position: absolute;
+    background: #4AD6BD;
+    -webkit-transition: all .1s ease-in-out 0s;
+            transition: all .1s ease-in-out 0s
+  }
+  
+  .nav.active:after {
+    top: 0px;
+    left: -160px;
+    width: 380px;
+    height: 45px;
+    border-radius: 30px 30px 30px 30px;
+  }
+  
+  .nav-item {
+    top: 0;
+    left: 0;
+    z-index: 19;
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    font-size: 24px;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    line-height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    text-align: center;
+    -webkit-transition: all .3s cubic-bezier(.68, 1.55, .265, 1);
+            transition: all .3s cubic-bezier(.68, 1.55, .265, 1)
+  }
+  
+  .nav.active .nav-count-1 {
+    -webkit-transform: translate(100px, 0px);
+        -ms-transform: translate(100px, 0px);
+            transform: translate(100px, 0px)
+  }
+  
+  .nav.active .nav-count-2 {
+    -webkit-transform: translate(50px, 0px);
+        -ms-transform: translate(50px, 0px);
+            transform: translate(50px, 0px)
+  }
+  
+  .nav.active .nav-count-3 {
+    -webkit-transform: translate(-50px, 0px);
+        -ms-transform: translate(-50px, 0px);
+            transform: translate(-50px, 0px)
+  }
+  
+  .nav.active .nav-count-4 {
+    -webkit-transform: translate(-100px, 0);
+        -ms-transform: translate(-100px, 0);
+            transform: translate(-100px, 0)
+  }
+    
+  .nav.active .nav-count-5 {
+    -webkit-transform: translate(-150px, 0);
+        -ms-transform: translate(-150px, 0);
+            transform: translate(-150px, 0)
+  }
+  
+  .pull-left {
+    float: left
+  }
+  
+  .pull-right {
+    float: right
+  }
+  
+  .html,
+  .invisible {
+    display: none
+  }
+  
+  .html.visible,
+  .visible {
+    display: block
+  }
+  
+  
+  .html.Play,
+  .html.search,
+  .html.compose,
+  .html.credits,
+  .html.settings,
+  .html.welcome {
+    margin-top: 50px
+  }
+  
+  .on-off {
+    display: none
+  }
+  
+  .on-off+label {
+    width: 30px;
+    height: 10px;
+    position: relative;
+    border-radius: 5px;
+    background: #dedee0;
+    display: inline-block;
+    -webkit-transition: all .3s ease-in-out 0s;
+            transition: all .3s ease-in-out 0s
+  }
+  
+  .on-off+label:after {
+    left: 0;
+    top: -2px;
+    width: 15px;
+    content: '';
+    height: 15px;
+    position: absolute;
+    border-radius: 50%;
+    background: #bebdc2;
+    -webkit-transition: all .3s ease-in-out 0s;
+            transition: all .3s ease-in-out 0s
+  }
+  
+  .on-off:checked+label {
+    background: #fd99b3
+  }
+  
+  .on-off:checked+label:after {
+    left: 15px;
+    background: #fb3666
+  }
+  
+  .btn {
+    color: #eee;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    padding: 12px 24px;
+    background: #cf0e3f;
+     -webkit-animation-delay: .3s;
+    animation-delay: 0.3s;
+  }
+  
+  .welcome .datetime .date,
+  .welcome .datetime .day {
+    margin-bottom: 15px
+  }
+  
+  .welcome .datetime .day {
+    font-size: 28px;
+    -webkit-animation-delay: .3s;
+    animation-delay: .3s
+  }
+  
+  .welcome .datetime .date {
+    -webkit-animation-duration: .35s;
+    animation-duration: .35s
+  }
+  
+  
+  
+  
+  
+  
+  .compose .forms .group {
+    margin-bottom: 15px
+  }
+  
+  .compose .forms .group>label {
+    padding: 6px 0;
+    min-width: 40px;
+    display: inline-block
+  }
+  
+  .compose .forms .group>label>span {
+    min-width: 20px;
+    display: inline-block
+  }
+  
+  .compose .forms .group input,
+  .compose .forms .group textarea {
+    color: #fff;
+    border: none;
+    resize: none;
+    min-width: 185px;
+    background: 0 0;
+    padding: 5px 10px 1px;
+    border-bottom: 1px solid rgba(170, 170, 170, .6)
+  }
+  
+  .compose .forms .visible {
+    width: 100%;
+    display: block!important
+  }
+  
+  .compose .forms .action {
+    margin-top: 50px
+  }
+  
+  .compose .forms .group:nth-child(1) {
+    -webkit-animation-duration: .1s;
+    animation-duration: .1s
+  }
+  
+  .compose .forms .group:nth-child(2) {
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s
+  }
+  
+  .compose .forms .group:nth-child(3) {
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s
+  }
+  
+  .compose .forms .group:nth-child(4) {
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s
+  }
+  
+  .Play .tabs-list {
+    margin-bottom: 15px
+  }
+  
+  .Play .tabs-list .tab {
+    float: left;
+    color: #aaa;
+    font-size: 12px;
+    font-weight: 400;
+    margin-right: 15px;
+    padding-bottom: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent
+  }
+  
+  .Play .tabs-list .tab.active,
+  .Play .tabs-list .tab:hover {
+    color: #fff;
+    border-bottom: 2px solid
+  }
+  
+  .Play .active-singers .user {
+    padding: 5px 0;
+    cursor: default
+  }
+  
+  .Play .active-singers .photo {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #80FFFF;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, .4)
+  }
+  
+  .Play .active-singers .photo img {
+    width: 100%
+  }
+  
+  .Play .active-singers .desc {
+    margin-left: 15px
+  }
+  
+  .Play .active-singers .desc p {
+    margin: 0;
+    font-size: 14px
+  }
+  
+  .Play .active-singers .desc .name {
+    font-weight: 400
+  }
+  
+  .Play .active-singers .desc .position {
+    color: #ccc;
+    font-size: 12px
+  }
+  
+  .Play .active-singers .user .idle {
+    height: 40px;
+    position: relative
+  }
+  
+  .Play .active-singers .user .idle>span {
+    top: 50%;
+    right: 0;
+   width: 0;
+      height: 0;
+    margin-top: -7.5px;
+    position: absolute;
+    
+    display: inline-block;
+    border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid rgba(88,197,233,1);
+  }
+  
+  
+  .Play .active-singers .user:nth-child(1) {
+    -webkit-animation-duration: .18s;
+    animation-duration: .18s
+  }
+  
+  .Play .active-singers .user:nth-child(2) {
+    -webkit-animation-duration: .25s;
+    animation-duration: .25s
+  }
+  
+  .Play .active-singers .user:nth-child(3) {
+    -webkit-animation-duration: .35s;
+    animation-duration: .35s
+  }
+  
+  .Play .active-singers .user:nth-child(4) {
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s
+  }
+  
+  .Play .active-singers .user:nth-child(5) {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s
+  }
+  
+  .Play .active-singers .user:nth-child(6) {
+    -webkit-animation-duration: .6s;
+    animation-duration: .6s
+  }
+  
+  .Play .active-singers .user .idle>span:before {
+    right: 20px;
+    bottom: -2px;
+    display: none;
+    padding: 0 5px;
+    font-size: 12px;
+    position: absolute;
+    border-radius: 2px;
+    content: attr(class);
+    background: rgba(0, 0, 0, .4);
+    text-transform: capitalize
+  }
+  
+  .Play .active-singers .user:hover .idle>span:before {
+    display: block;
+    -webkit-animation: fadeInRight .4s;
+    animation: fadeInRight .4s
+  }
+  
+  .profile {
+    margin-top: 10px;
+  }
+  
+  .profile .photo {
+      
+    margin: auto;
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    border: opx solid #ccc
+  }
+  
+  .profile .photo img {
+    width: 100%;
+    
+    border-radius: 5px;
+    -webkit-transition: all .2s ease-in-out 0s;
+            transition: all .2s ease-in-out 0s
+  }
+  
+  
+  
+  
+  
+  
+  .profile .details .heading {
+    padding: 5px;
+    margin: 10px 0;
+    text-align: center;
+   
+  }
+  
+  .profile .details .heading>.name {
+    font-size: 16px;
+    font-weight: 400;
+    padding-right: 5px;
+    color:#00CECE;
+  }
+  
+  .profile .details .heading>.position {
+    font-size: 12px;
+    padding-left: 5px;
+    vertical-align: 1px;
+    border-left: 1px solid;
+    color:#ccc;
+  }
+  
+  .profile .details .text {
+    margin: 0;
+    color: #ccc;
+    line-height: 24px;
+    text-align: center;
+    -webkit-animation-delay: .3s;
+    animation-delay: .3s;
+  }
+  .batterytop
+  {
+      top:0px;
+      position:absolute;
+  }
+  
+  
+  
