@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
     $date_of_birth = mysqli_real_escape_string($conn, $_POST['date_of_birth']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
-
+   
     // Check if email already exists
     $check_email = "SELECT * FROM users WHERE email = '$email'";
     $result = mysqli_query($conn, $check_email);
@@ -18,13 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
         echo "<script>alert('Email already exists! Try another one.'); window.location='register.php';</script>";
         exit();
     }
-
+    echo "Hello";
     // Hash the password for security
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert data into database
-    $sql = "INSERT INTO users (first_name, middle_name, last_name, full_name, date_of_birth, email, password) 
-            VALUES ('$first_name', '$middle_name', '$last_name', '$full_name', '$date_of_birth', '$email', '$hashed_password')";
+    $sql = "INSERT INTO users (first_name, middle_name, last_name, username, dob, email, `password` , `role`) 
+            VALUES ('$first_name', '$middle_name', '$last_name', '$full_name', '$date_of_birth', '$email', '$hashed_password' , 'user')";
 
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert('Registration successful! You can now login.'); window.location='login.php';</script>";
