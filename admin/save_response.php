@@ -1,6 +1,5 @@
 <?php
 require_once "../db.php";
-
 $category = $_POST['category'];
 $card = $_POST['card'];
 $response = $_POST['response'];
