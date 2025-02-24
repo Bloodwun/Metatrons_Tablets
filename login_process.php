@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
             $_SESSION['user_name'] = $user['full_name'];
             $_SESSION['user_email'] = $user['email'];
             $_SESSION['role'] = $user['role']; // Store role
+            $_SESSION['dob'] = $user['dob']; // Store role
 
             // Redirect based on role
             if ($user['role'] == 'admin') {
