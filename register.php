@@ -7,7 +7,7 @@
                 <h2>Register</h2>
                 <div class="group clearfix slideInLeft animated">
                     <label class="pull-left" for="first_name">First Name</label>
-                    <input class="pull-right" type="text" name="first_name" required>
+                    <input class="pull-right" type="text" name="first_name" >
                 </div>
                 <div class="group clearfix slideInLeft animated">
                     <label class="pull-left" for="middle_name">Middle Name</label>
@@ -15,7 +15,7 @@
                 </div>
                 <div class="group clearfix slideInLeft animated">
                     <label class="pull-left" for="last_name">Last Name</label>
-                    <input class="pull-right" type="text" name="last_name" required>
+                    <input class="pull-right" type="text" name="last_name" >
                 </div>
                 <div class="group clearfix slideInRight animated">
                     <label class="pull-left" for="full_name">Nick Name</label>
