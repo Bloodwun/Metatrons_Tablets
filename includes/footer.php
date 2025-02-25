@@ -1,7 +1,10 @@
 
-</div></div>
 
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
-<script src="<?php echo BASE_URL; ?>assets/js/index.js"></script>
+ </div>
+    </div>
+	
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script src="assets/js/index.js"></script>
 </body>
 </html>

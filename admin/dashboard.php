@@ -57,9 +57,9 @@ require_once "../db.php";
     <div class="sidebar">
         <h4 class="text-center">Admin Panel</h4>
         <a href="index.html">Dashboard</a>
-        <a href="test.html">Test Page</a>
-        <a href="#">Settings</a>
-        <a href="#">Logout</a>
+        <!-- <a href="test.html">Test Page</a>
+        <a href="#">Settings</a> -->
+        <a href="../logout.php">Logout</a>
     </div>
 
     <!-- Content Area -->

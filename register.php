@@ -18,11 +18,11 @@
                     <input class="pull-right" type="text" name="last_name" required>
                 </div>
                 <div class="group clearfix slideInRight animated">
-                    <label class="pull-left" for="full_name">Full Name</label>
+                    <label class="pull-left" for="full_name">Nick Name</label>
                     <input class="pull-right" type="text" name="full_name" required>
                 </div>
                 <div class="group clearfix slideInLeft animated">
-                    <label class="pull-left" for="date_of_birth">Date of Birth</label>
+                    <label class="pull-left" for="date_of_birth">Dob</label>
                     <input class="pull-right" type="date" name="date_of_birth" required>
                 </div>
                 <div class="group clearfix slideInRight animated">
@@ -30,7 +30,7 @@
                     <input class="pull-right" type="email" name="email" required>
                 </div>
                 <div class="group clearfix slideInLeft animated">
-                    <label class="pull-left" for="password">Password</label>
+                    <label class="pull-left" for="password">Pass</label>
                     <input class="pull-right" type="password" name="password" required>
                 </div>
                 <div class="action rollIn animated">

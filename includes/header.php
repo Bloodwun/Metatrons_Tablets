@@ -2,25 +2,28 @@
 <?php
 require_once "db.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Mobile Toggle Menu</title>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,300,700'>
-    <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
-</head>
+  </head>
+  <body>
+  <div class="mobile-wrap">
+      <div class="mobile clearfix">
+        <div class="header">
+          <span class="ion-ios-navicon pull-left"><i></i></span>
+          <span class="title">Home</span>
+          <span class="ion-ios-search pull-right"></span>
+          <div class="search">
+            <form method="post">
+              <input type="search" placeholder="Search Here" />
+            </form>
+          </div>
+        </div>
+<?php include 'layouts/user-sidebar.php'; ?>
 
-<body>
-    <div class="mobile-wrap">
-        <div class="mobile clearfix">
-            <div class="batterytop">
-                <i class="ion-more"></i><i class="ion-more"></i>&nbsp;<i class="ion-wifi"></i><i
-                    class="ion-battery-full" style="right:-210px; position:absolute;"></i>
-            </div>
 
-       
-       
