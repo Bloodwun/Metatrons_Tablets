@@ -1,5 +1,5 @@
 body {
-    background:url("https://wallpaperaccess.com/full/1216501.jpg") no-repeat fixed;
+    background:url("../images/background.jpg") no-repeat fixed;
     background-size:cover;
     font: 300 18px/18px Roboto;
   }
@@ -30,7 +30,8 @@ body {
     height: 700px;
     overflow: hidden;
     position: relative;
-    background:url("https://wallpapers.com/images/featured/minimalist-phone-background-5as7vn1i37sgrkyd.jpg");
+    background: url("../images/mobile-background.jpg");
+
     background-position:center;
     background-size:cover;
     border-radius:35px;
