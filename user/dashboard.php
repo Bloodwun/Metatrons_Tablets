@@ -7,6 +7,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'user') {
 }
 include '../layouts/header.php';
 ?>
+
 <h2>User Dashboard</h2>
 <div class="html profile visible">
 		<div class="photo flipInX animated">
