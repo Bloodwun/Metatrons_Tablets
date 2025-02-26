@@ -1,7 +1,8 @@
 
 body {
-  background: url("../images/background-img.jpg") no-repeat center center fixed;
+  /* background: url("../images/background-img.jpg") no-repeat center center fixed; */
   background-size: cover;
+ background-color: #000;
   font: 300 18px/18px Roboto;
 }
 
@@ -21,15 +22,15 @@ body {
   clear: both;
   display: block;
 }
-
 .mobile-wrap {
   margin: auto;
-  width: 410px; /* Adjust as needed */
-  aspect-ratio: 1 / 1.55; /* Adjust this ratio based on your image */
+  padding: 2px;
+  width: 410px;
+  aspect-ratio: 1 / 1.55;
   overflow: hidden;
   position: relative;
-  background: url(../images/metatroncard.jpg) no-repeat center center;
-  background-size: contain; /* Keeps the full image visible */
+  background: black url(../images/metatroncard.jpg) no-repeat center bottom; /* Black + Image */
+  background-size: contain;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
@@ -42,12 +43,12 @@ body {
   bottom: 0;
   content: "";
   position: absolute;
-  /* background: rgba(90, 93, 165, 0.8);
+  background: rgba(90, 93, 165, 0.8);
   background: linear-gradient(
     to bottom,
-    rgba(90, 93, 165, 1),
+    rgba(90, 93, 165, 0.3),
     rgba(0, 0, 0, 0.7)
-  ); */
+  );
 }
 
 .mobile {
