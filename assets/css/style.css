@@ -24,7 +24,6 @@ body {
 }
 .mobile-wrap {
   margin: auto;
-  padding: 2px;
   width: 410px;
   aspect-ratio: 1 / 1.55;
   overflow: hidden;
