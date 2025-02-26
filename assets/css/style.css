@@ -24,16 +24,15 @@ body {
 
 .mobile-wrap {
   margin: auto;
-  width: 400px;
-  height: 534px;
+  width: 410px; /* Adjust as needed */
+  aspect-ratio: 1 / 1.55; /* Adjust this ratio based on your image */
   overflow: hidden;
   position: relative;
   background: url(../images/metatroncard.jpg) no-repeat center center;
-  background-size: cover; /* Ensures the image covers the entire div */
+  background-size: contain; /* Keeps the full image visible */
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
-
 
 
 .mobile-wrap:before {
