@@ -70,18 +70,15 @@ var App = {
             .removeClass("fadeOut animated")
             .addClass("fadeIn animated");
       }),
-        $(".sidebar .sidebar-overlay").on(
-          "touchstart click",
-          function (e) {
-            e.preventDefault(),
-              $(".ion-ios-navicon").click(),
-              $(this).removeClass("fadeIn").addClass("fadeOut");
-          }
-        );
+        $(".sidebar .sidebar-overlay").on("touchstart click", function (e) {
+          e.preventDefault(),
+            $(".ion-ios-navicon").click(),
+            $(this).removeClass("fadeIn").addClass("fadeOut");
+        });
     },
     navigation: function () {
       $(".nav-left a").on("touchstart click", function (e) {
-        e.preventDefault();
+      
         var t = $(this).attr("href").replace("#", "");
         $(".sidebar").toggleClass("active"),
           $(".html").removeClass("visible"),
@@ -102,13 +99,10 @@ var App = {
           ? (App.search.html($(".header .search input").val()), !1)
           : ($(".nav").removeClass("active"),
             $(".header .search input").focus(),
-            void $(".header .search input").toggleClass(
-              "search-visible"
-            ));
+            void $(".header .search input").toggleClass("search-visible"));
       }),
         $(".search form").on("submit", function (e) {
-          e.preventDefault(),
-            App.search.html($(".header .search input").val());
+          e.preventDefault(), App.search.html($(".header .search input").val());
         });
     },
     html: function (e) {
@@ -128,12 +122,19 @@ var App = {
   },
   hyperlinks: function () {
     $(".nav .nav-item").on("click", function (e) {
-      e.preventDefault();
-      var t = $(this).attr("href").replace("#", "");
-      $(".html").removeClass("visible"),
-        $(".html." + t).addClass("visible"),
-        $(".nav").toggleClass("active"),
-        App.title($(this).text());
+        var url = $(this).attr("href");
+        if (url.startsWith("#")) {
+            e.preventDefault();
+            var page = url.replace("#", "");
+            $(".html").removeClass("visible");
+            $(".html." + page).addClass("visible");
+            $(".nav").toggleClass("active");
+            App.title($(this).text());
+        } else {
+            // ✅ Allow normal page navigation
+            window.location.href = url;
+        }
     });
-  },
+}
+
 };
