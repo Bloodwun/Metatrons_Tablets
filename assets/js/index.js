@@ -79,18 +79,18 @@ var App = {
           }
         );
     },
-    // navigation: function () {
-    //   $(".nav-left a").on("touchstart click", function (e) {
-    //     e.preventDefault();
-    //     var t = $(this).attr("href").replace("#", "");
-    //     $(".sidebar").toggleClass("active"),
-    //       $(".html").removeClass("visible"),
-    //       "home" == t || "" == t || null == t
-    //         ? $(".html.welcome").addClass("visible")
-    //         : $(".html." + t).addClass("visible"),
-    //       App.title($(this).text());
-    //   });
-    // },
+    navigation: function () {
+      $(".nav-left a").on("touchstart click", function (e) {
+        e.preventDefault();
+        var t = $(this).attr("href").replace("#", "");
+        $(".sidebar").toggleClass("active"),
+          $(".html").removeClass("visible"),
+          "home" == t || "" == t || null == t
+            ? $(".html.welcome").addClass("visible")
+            : $(".html." + t).addClass("visible"),
+          App.title($(this).text());
+      });
+    },
   },
   search: {
     bar: function () {
