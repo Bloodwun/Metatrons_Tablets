@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
                 header("Location: admin/dashboard.php");
             } elseif ($user['role'] == 'user') {
                 header("Location: user/dashboard.php");
-            } elseif ($user['role'] == 'reader') {
+            } elseif ($user['role'] == 'consultant') {
                 header("Location: reader/dashboard.php");
             }
             exit();
