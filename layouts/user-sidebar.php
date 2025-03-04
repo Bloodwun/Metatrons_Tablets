@@ -1,9 +1,4 @@
-<?php
 
-
-
-
-?>
 
 <div class="sidebar">
     <div class="sidebar-overlay"></div>
@@ -20,7 +15,6 @@
 
         <div class="nav-left">
         <?php
-session_start(); // Ensure session is started
 
 if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] == 'user') { ?>
@@ -42,7 +36,7 @@ if (isset($_SESSION['role'])) {
         <a href="../reader/temporary_user_form.php" class="list-group-item list-group-item-action">
             <span class="bi bi-person-plus"></span> Add a Temporary User
         </a>
-        <a href="/user/view-profile.php" class="list-group-item list-group-item-action">
+        <a href="../reader/dashboard.php" class="list-group-item list-group-item-action">
             <span class="bi bi-person-circle"></span> View Profile
         </a>
         <a href="/user/private-session.php" class="list-group-item list-group-item-action">
@@ -50,6 +44,9 @@ if (isset($_SESSION['role'])) {
         </a>
         <a href="/user/store.php" class="list-group-item list-group-item-action">
             <span class="bi bi-shop"></span> Store (Buy Tarot Decks)
+        </a>
+        <a href="/user/store.php" class="list-group-item list-group-item-action">
+            <span class="bi bi-shop"></span> Billing 
         </a>
         <a href="/logout.php" class="list-group-item list-group-item-action text-danger">
             <span class="bi bi-box-arrow-right"></span> Logout

@@ -18,6 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
             $_SESSION['user_email'] = $user['email'];
             $_SESSION['role'] = $user['role']; // Store role
             $_SESSION['dob'] = $user['dob']; // Store role
+            $_SESSION['status'] = $user['status']; // Store role
+            $_SESSION['tarot_experience'] = $user['tarot_experience']; // Store role
+            $_SESSION['cash_app_username'] = $user['cash_app_username']; // Store role
+            $_SESSION['paypal_email'] = $user['paypal_email']; // Store role
+
 
             // Redirect based on role
             if ($user['role'] == 'admin') {

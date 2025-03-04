@@ -1,66 +1,9 @@
 <?php
-require_once "../db.php";
+require_once "../admin-layouts/header.php";
+
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarot Reading</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/html5-qrcode"></script>
-    <style> 
-        body {
-            display: flex;
-        }
 
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            background: #343a40;
-            color: white;
-            padding-top: 20px;
-            position: fixed;
-        }
-
-        .sidebar a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            display: block;
-        }
-
-        .sidebar a:hover {
-            background: #495057;
-        }
-
-        .content {
-            margin-left: 250px;
-            padding: 20px;
-            width: 100%;
-        }
-
-        .header {
-            background: #007bff;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h4 class="text-center">Admin Panel</h4>
-        <a href="index.html">Dashboard</a>
-        <!-- <a href="test.html">Test Page</a>
-        <a href="#">Settings</a> -->
-        <a href="../logout.php">Logout</a>
-    </div>
 
     <!-- Content Area -->
     <div class="content">
@@ -126,50 +69,7 @@ require_once "../db.php";
         </div>
     </div>
 
-    <script>
-        $(document).ready(function () {
-            $("#generateResponse").click(function () {
-                var category = $("#questionCategory").val();
-                var card = $("#tarotCard").val();
-                if (!category || !card) {
-                    alert("Please select a category and a card.");
-                    return;
-                }
+    <?php
+require_once "../admin-layouts/footer.php";
 
-                $.ajax({
-                    url: "fetch_gpt_response.php",
-                    type: "POST",
-                    data: { category: category, card: card },
-                    success: function (response) {
-                        $("#gptResponse").val(response);
-                        $("#saveToDatabase").prop("disabled", false);
-                    }
-                });
-            });
-
-            $("#saveToDatabase").click(function () {
-                var category = $("#questionCategory").val();
-                var card = $("#tarotCard").val();
-                var response = $("#gptResponse").val();
-
-                if (!response.trim()) {
-                    alert("Response cannot be empty.");
-                    return;
-                }
-
-                $.ajax({
-                    url: "save_response.php",
-                    type: "POST",
-                    data: { category: category, card: card, response: response },
-                    success: function (result) {
-                        alert(result);
-                        $("#saveToDatabase").prop("disabled", true);
-                    }
-                });
-            });
-        });
-    </script>
-
-</body>
-
-</html>
+?>

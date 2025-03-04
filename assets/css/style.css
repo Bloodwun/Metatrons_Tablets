@@ -288,12 +288,12 @@ body {
 }
 
 .sidebar .sidebar-content {
-  width: 80%;
+  /* width: 80%; */
   color: #333;
   padding: 15px;
   z-index: 9999;
   background: #fff;
-  transform: translateX(-100%)
+  transform: translateX(-105%)
 }
 
 .sidebar.active .sidebar-content {
