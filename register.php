@@ -6,19 +6,19 @@
             <div class="forms">
                 <h2>Register</h2>
                 <div class="group clearfix slideInLeft animated">
-                    <label class="pull-left" for="first_name">First Name</label>
+                    <label class="pull-left" for="first_name">F Name</label>
                     <input class="pull-right" type="text" name="first_name" >
                 </div>
                 <div class="group clearfix slideInLeft animated">
-                    <label class="pull-left" for="middle_name">Middle Name</label>
+                    <label class="pull-left" for="middle_name">M Name</label>
                     <input class="pull-right" type="text" name="middle_name">
                 </div>
                 <div class="group clearfix slideInLeft animated">
-                    <label class="pull-left" for="last_name">Last Name</label>
+                    <label class="pull-left" for="last_name">L Name</label>
                     <input class="pull-right" type="text" name="last_name" >
                 </div>
                 <div class="group clearfix slideInRight animated">
-                    <label class="pull-left" for="full_name">Nick Name</label>
+                    <label class="pull-left" for="full_name" style="font-size: medium;">Nick Name</label>
                     <input class="pull-right" type="text" name="full_name" required>
                 </div>
                 <div class="group clearfix slideInLeft animated">
@@ -36,10 +36,7 @@
                 <div class="action rollIn animated">
                     <button class="btn" type="submit" name="register">Register</button>
                 </div>
-                <div class="login-link">
-                    <p>Already have an account? </p>
-                    <button class="btn"><a href="login.php">Login</a></button>
-                </div>
+               
             </div>
         </div>
     </div>

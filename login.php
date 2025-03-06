@@ -21,11 +21,7 @@ if (isset($_GET['error'])) {
                 <div class="action flipInY animated">
                     <button class="btn" type="submit" name="login">Login</button>
                 </div>
-                <div class="action flipInY animated">
-                    <p>If you don't have an account, .</p>
-                    <button class="btn"><a class="btn" href="register.php">Register Here</a>
-                    </button>
-                </div>
+              
             </div>
         </div>
     </form>
