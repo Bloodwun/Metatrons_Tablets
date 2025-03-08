@@ -1,37 +1,54 @@
 <?php
-include 'db.php'; // Include your database connection
+include 'db.php'; // Include database connection
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
-    // Get form data and sanitize it
-    $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
-    $middle_name = mysqli_real_escape_string($conn, $_POST['middle_name']);
-    $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
-    $full_name = mysqli_real_escape_string($conn, $_POST['full_name']);
-    $date_of_birth = mysqli_real_escape_string($conn, $_POST['date_of_birth']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-   
-    // Check if email already exists
-    $check_email = "SELECT * FROM users WHERE email = '$email'";
-    $result = mysqli_query($conn, $check_email);
-    if (mysqli_num_rows($result) > 0) {
+    // Validate input
+    $first_name = trim($_POST['first_name']);
+    $middle_name = trim($_POST['middle_name']);
+    $last_name = trim($_POST['last_name']);
+    $full_name = trim($_POST['full_name']);
+    $date_of_birth = trim($_POST['date_of_birth']);
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+
+    // Check if any required fields are empty
+    if (empty($first_name) || empty($last_name) || empty($full_name) || empty($date_of_birth) || empty($email) || empty($password)) {
+        echo "<script>alert('Please fill in all required fields.'); window.location='register.php';</script>";
+        exit();
+    }
+
+    // Validate email format
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<script>alert('Invalid email format!'); window.location='register.php';</script>";
+        exit();
+    }
+
+    // Check if email already exists using prepared statements
+    $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->store_result();
+    
+    if ($stmt->num_rows > 0) {
         echo "<script>alert('Email already exists! Try another one.'); window.location='register.php';</script>";
         exit();
     }
-   
+    $stmt->close();
+
     // Hash the password for security
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Insert data into database
-    $sql = "INSERT INTO users (first_name, middle_name, last_name, username, dob, email, `password` , `role`) 
-            VALUES ('$first_name', '$middle_name', '$last_name', '$full_name', '$date_of_birth', '$email', '$hashed_password' , 'user')";
+    // Insert user into the database using prepared statements
+    $stmt = $conn->prepare("INSERT INTO users (first_name, middle_name, last_name, username, dob, email, password, role) VALUES (?, ?, ?, ?, ?, ?, ?, 'user')");
+    $stmt->bind_param("sssssss", $first_name, $middle_name, $last_name, $full_name, $date_of_birth, $email, $hashed_password);
 
-    if (mysqli_query($conn, $sql)) {
+    if ($stmt->execute()) {
         echo "<script>alert('Registration successful! You can now login.'); window.location='login.php';</script>";
     } else {
-        echo "<script>alert('Error: " . mysqli_error($conn) . "'); window.location='register.php';</script>";
+        echo "<script>alert('Error: Something went wrong.'); window.location='register.php';</script>";
     }
 
-    mysqli_close($conn);
+    $stmt->close();
+    $conn->close();
 }
 ?>
