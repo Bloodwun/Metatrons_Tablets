@@ -11,17 +11,14 @@ if (isset($_GET['error'])) {
         <div class="html compose visible">
             <div class="forms">
                 <div class="group clearfix slideInRight animated">
-                    <label class="pull-left" for="email"><span class="ion-ios-time-outline"></span> Email</label>
-                    <input class="pull-right" id="email" type="email" name="email" required />
+                    <input class="pull-right" id="email" type="email" name="email" placeholder="Email" required />
                 </div>
                 <div class="group clearfix slideInLeft animated">
-                    <label class="pull-left" for="password"><span class="ion-ios-calendar-outline"></span> Pass</label>
-                    <input class="pull-right" id="password" type="password" name="password" required />
+                    <input class="pull-right" id="password" type="password" name="password" placeholder="Password" required />
                 </div>
                 <div class="action flipInY animated">
                     <button class="btn" type="submit" name="login">Login</button>
                 </div>
-              
             </div>
         </div>
     </form>

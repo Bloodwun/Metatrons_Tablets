@@ -6,37 +6,29 @@
             <div class="forms">
                 <h2>Register</h2>
                 <div class="group clearfix slideInLeft animated">
-                    <label class="pull-left" for="first_name">F Name</label>
-                    <input class="pull-right" type="text" name="first_name" >
+                    <input class="" type="text" name="first_name" placeholder="First Name">
                 </div>
                 <div class="group clearfix slideInLeft animated">
-                    <label class="pull-left" for="middle_name">M Name</label>
-                    <input class="pull-right" type="text" name="middle_name">
+                    <input class="" type="text" name="middle_name" placeholder="Middle Name">
                 </div>
                 <div class="group clearfix slideInLeft animated">
-                    <label class="pull-left" for="last_name">L Name</label>
-                    <input class="pull-right" type="text" name="last_name" >
+                    <input class="" type="text" name="last_name" placeholder="Last Name">
                 </div>
                 <div class="group clearfix slideInRight animated">
-                    <label class="pull-left" for="full_name" style="font-size: medium;">Nick Name</label>
-                    <input class="pull-right" type="text" name="full_name" required>
+                    <input class="" type="text" name="full_name" placeholder="Nick Name" required>
                 </div>
                 <div class="group clearfix slideInLeft animated">
-                    <label class="pull-left" for="date_of_birth">Dob</label>
-                    <input class="pull-right" type="date" name="date_of_birth" required>
+                    <input class="" type="date" name="date_of_birth" required>
                 </div>
                 <div class="group clearfix slideInRight animated">
-                    <label class="pull-left" for="email">Email</label>
-                    <input class="pull-right" type="email" name="email" required>
+                    <input class="" type="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="group clearfix slideInLeft animated">
-                    <label class="pull-left" for="password">Pass</label>
-                    <input class="pull-right" type="password" name="password" required>
+                    <input class="" type="password" name="password" placeholder="Password" required>
                 </div>
                 <div class="action rollIn animated">
                     <button class="btn" type="submit" name="register">Register</button>
                 </div>
-               
             </div>
         </div>
     </div>

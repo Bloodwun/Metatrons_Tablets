@@ -530,11 +530,23 @@ body {
   color: #fff;
   border: none;
   resize: none;
-  min-width: 185px;
+  min-width: 100%;
   background: 0 0;
   padding: 5px 10px 1px;
   border-bottom: 1px solid rgba(170, 170, 170, .6)
 }
+input::placeholder {
+  color: white;
+  opacity: 1; /* Ensures full visibility of placeholder */
+}
+
+input {
+  color: white; /* Ensures typed text is also white */
+  background: transparent; /* Makes input field background transparent */
+  border: 1px solid white; /* Optional: Adds a white border for better visibility */
+  padding: 8px;
+}
+
 
 .compose .forms .visible {
   width: 100%;
