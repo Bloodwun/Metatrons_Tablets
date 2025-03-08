@@ -18,8 +18,12 @@
                     <input class="" type="text" name="full_name" placeholder="Nick Name" required>
                 </div>
                 <div class="group clearfix slideInLeft animated">
-                    <input class="" type="date" name="date_of_birth" required>
-                </div>
+    <input class="" type="date" name="date_of_birth" required 
+           onfocus="this.showPicker()" 
+           onblur="this.setAttribute('placeholder', 'Date of Birth')" 
+           placeholder="Date of Birth">
+</div>
+
                 <div class="group clearfix slideInRight animated">
                     <input class="" type="email" name="email" placeholder="Email" required>
                 </div>

