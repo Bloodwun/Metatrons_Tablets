@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
         echo "<script>alert('Email already exists! Try another one.'); window.location='register.php';</script>";
         exit();
     }
-    echo "Hello";
+   
     // Hash the password for security
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
