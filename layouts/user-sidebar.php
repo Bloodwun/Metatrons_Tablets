@@ -18,10 +18,10 @@
 
 if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] == 'user') { ?>
-        <a href="/user/dashboard.php"><span class=""></span> Profile</a>
+        <a href="..//user/dashboard.php"><span class=""></span> Profile</a>
         <a href="/user/personal-reading.php"><span class=""></span> Personal Reading</a>
         <a href="../user/temporary_user_form.php"><span class=""></span> Add a Temporary User</a>
-        <a href="/user/view-profile.php"><span class=""></span> View Profile</a>
+        <a href="..//user/dashboard.php"><span class=""></span> View Profile</a>
         <a href="/user/private-session.php"><span class=""></span> Start a Live Private Session</a>
         <a href="/user/store.php"><span class=""></span> Store</a>
         <a href="/logout.php"><span class=""></span> Logout</a>

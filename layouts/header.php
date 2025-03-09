@@ -12,7 +12,7 @@ require_once "../db.php";
     <link rel="stylesheet" href="../assets/css/style.css?v=<?= filemtime(__DIR__ . '/../assets/css/style.css'); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
-
+    <script src="https://unpkg.com/html5-qrcode"></script>
 
   </head>
   <body>
