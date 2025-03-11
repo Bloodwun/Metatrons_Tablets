@@ -42,7 +42,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submitTarot'])) {
     }
 }
 ?>
+<style>
+    .qr-scanner {
+    width: 250px;
+    height: 200px;
+    margin: 5px 0px;
+    border: 2px solid black;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
 
+</style>
 
 <!-- Content Area -->
 <div class="content">
@@ -52,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submitTarot'])) {
     <div class="container mt-5"> 
 	<form id="tarotForm" method="POST">
     <div class="mb-3 w-100">
-        <textarea class="form-control w-100" id="userQuestion" name="userQuestion" required placeholder="Enter Your Question" style="width:100%;">sdfsdf</textarea>
+        <textarea class="form-control w-100" id="userQuestion" name="userQuestion" required placeholder="Enter Your Question" style="width:100%;"></textarea>
     </div>
     <div class="mb-3">
         <label for="questionCategory" class="form-label">Question Category</label>
@@ -66,11 +77,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submitTarot'])) {
             ?>
         </select>
     </div>
-    <div id="qr-reader" class="mt-3" style="width: 250px; margin: auto;"></div>
 
     <div class="mb-3" style="margin-top:10px;">
         <input type="text" id="qr-result" name="cardId" class="form-control mt-2" placeholder="Tarot Card"  style="width:100%;">
     </div>
+    <center>
+    <div id="qr-reader" class="mt-3 qr-scanner" ></div>
+    </center>
+
     <button type="submit" class="btn btn-primary" name="submitTarot">Submit</button>
 </form>
 
@@ -109,8 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submitTarot'])) {
     document.getElementById("stopScan").addEventListener("click", function () {
         if (qrReader) {
             qrReader.stop().then(() => {
-                document.getElementById("qr-reader").style.display = "none"; // Hide scanner
-                document.getElementById("stopScan").style.display = "none"; // Hide Stop button
+          
             }).catch((err) => {
                 console.log("Error stopping scanner: ", err);
             });
