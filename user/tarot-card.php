@@ -224,6 +224,7 @@ if ($result->num_rows > 0) {
 
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -247,7 +248,41 @@ if ($result->num_rows > 0) {
       });
     });
   </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".tarot-card").forEach(function (card) {
+        let cardName = card.querySelector(".tarot-title").textContent.trim();
+        let qrCodeDiv = card.querySelector(".qr-code");
 
+        new QRCode(qrCodeDiv, {
+            text: cardName,
+            width: 80,
+            height: 80,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+
+        // Click event to send image to the server
+        card.addEventListener("click", function () {
+            html2canvas(card).then(function (canvas) {
+                let imageData = canvas.toDataURL("image/png"); // Get image data
+
+                // Send image data to the server
+                fetch("save_image.php", {
+                    method: "POST",
+                    body: JSON.stringify({ image: imageData, name: cardName }),
+                    headers: { "Content-Type": "application/json" }
+                })
+                .then(response => response.json())
+                .then(data => alert(data.message))
+                .catch(error => console.error("Error:", error));
+            });
+        });
+    });
+});
+
+</script>
 </body>
 
 </html>

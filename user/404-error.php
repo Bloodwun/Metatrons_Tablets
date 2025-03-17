@@ -14,7 +14,9 @@ include '../layouts/header.php';
     <p>Please come back when our work is complete.</p>
 </div>
 
-<!-- <div class="atin  animated" style="margin-top : 20px">
+<!--
+<div class="atin  animated" style="margin-top : 20px">
 	<a href="../logout.php" class="btn">Logout</a>
-</div> -->
+</div>
+-->
 <?php include '../layouts/footer.php'; ?>
